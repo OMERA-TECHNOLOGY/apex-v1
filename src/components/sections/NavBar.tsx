@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -41,38 +41,61 @@ const NavBar = () => {
         </button>
 
         <div className="hidden md:flex items-center gap-8">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="relative text-sm font-medium text-foreground hover:text-accent transition-all duration-300 cursor-hover group"
-          >
-            About
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="relative text-sm font-medium text-foreground hover:text-accent transition-all duration-300 cursor-hover group"
-          >
-            Services
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-          </button>
-          <button
-            onClick={() => scrollToSection("work")}
-            className="relative text-sm font-medium text-foreground hover:text-accent transition-all duration-300 cursor-hover group"
-          >
-            Work
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-          </button>
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full glass-morph hover:scale-110 transition-all duration-300 cursor-hover"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-accent" />
-            ) : (
-              <Moon className="w-5 h-5 text-primary" />
-            )}
-          </button>
+          {/* Navigation Links */}
+          {["about", "services", "work", "contact"].map((section) => (
+            <button
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className="relative text-sm font-medium text-foreground hover:text-accent transition-all duration-300 cursor-hover group"
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+            </button>
+          ))}
+
+          {/* Theme Toggle Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="p-2 rounded-full glass-morph border-accent/30 hover:border-accent cursor-hover"
+                aria-label="Toggle theme"
+              >
+                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="glass-morph border-accent/20"
+            >
+              <DropdownMenuItem
+                onClick={() => setTheme("light")}
+                className="cursor-hover"
+              >
+                <Sun className="mr-2 h-4 w-4" />
+                <span>Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("dark")}
+                className="cursor-hover"
+              >
+                <Moon className="mr-2 h-4 w-4" />
+                <span>Dark</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("system")}
+                className="cursor-hover"
+              >
+                <Sun className="mr-2 h-4 w-4" />
+                <span>System</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Start Project Button */}
           <button
             onClick={() => scrollToSection("contact")}
             className="px-6 py-2 bg-gradient-to-r from-accent to-accent/80 text-primary rounded-full text-sm font-semibold hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 cursor-hover"
