@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import Logo from "../Logo";
 
 const rotatingWords = ["define", "shape", "accelerate"];
 
@@ -41,20 +42,44 @@ export const Hero = () => {
       {/* Floating Geometric Shapes */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-accent/30 rotate-45 animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-accent/20 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-accent/10 backdrop-blur-sm animate-float" style={{ animationDelay: "2s" }} />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-accent/20 rounded-full animate-float"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/3 right-1/3 w-20 h-20 bg-accent/10 backdrop-blur-sm animate-float"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         {/* Logo/Brand */}
-        <div className="mb-12 animate-fade-in">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter">
-            <span className="bg-gradient-to-r from-accent via-accent to-secondary bg-clip-text text-transparent">
-              APEX
-            </span>
-          </h1>
-          <div className="h-1 w-32 bg-accent mx-auto mt-4 rounded-full" />
+        {/* Logo / Brand */}
+        <div className="mb-12 animate-fade-in flex flex-col items-center justify-center">
+          <div className="relative flex items-center justify-center">
+            <Logo className="h-20 sm:h-24 lg:h-32 w-auto fill-[url(#logoGradient)]" />
+
+            {/* Gradient Definition */}
+            <svg className="absolute">
+              <defs>
+                <linearGradient
+                  id="logoGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stopColor="#38bdf8" /> {/* from-accent */}
+                  <stop offset="50%" stopColor="#818cf8" /> {/* via-accent */}
+                  <stop offset="100%" stopColor="#c084fc" />{" "}
+                  {/* to-secondary */}
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div className="h-1 w-32 bg-accent mt-4 rounded-full" />
         </div>
 
         {/* Main Headline */}
@@ -76,14 +101,20 @@ export const Hero = () => {
         </h2>
 
         {/* Subheadline */}
-        <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <p
+          className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-fade-in"
+          style={{ animationDelay: "0.2s" }}
+        >
           Full-stack innovation for startups and enterprises.
           <br className="hidden sm:block" />
           We build what others imagine.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        <div
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
+          style={{ animationDelay: "0.4s" }}
+        >
           <Button
             size="lg"
             className="bg-accent hover:bg-accent/90 text-primary font-bold text-lg px-8 py-6 rounded-full shadow-accent group"
