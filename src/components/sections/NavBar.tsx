@@ -45,7 +45,9 @@ const NavBar = () => {
           {["about", "services", "work", "contact"].map((section) => (
             <button
               key={section}
-              onClick={() => scrollToSection(section)}
+              onClick={() =>
+                scrollToSection(section == "work" ? "case-studies" : section)
+              }
               className="relative text-sm font-medium text-foreground hover:text-accent transition-all duration-300 cursor-hover group"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
