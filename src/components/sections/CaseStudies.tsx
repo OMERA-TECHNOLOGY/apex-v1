@@ -102,7 +102,7 @@ export const CaseStudies = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 glass-morph rounded-3xl p-12">
+        <div className="mt-20 glass-morph bg-[#13304b] rounded-3xl p-12">
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <div>
               <div className="text-5xl font-bold text-accent mb-2">99.9%</div>
