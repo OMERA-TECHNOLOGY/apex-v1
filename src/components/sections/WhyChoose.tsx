@@ -40,8 +40,8 @@ export const WhyChoose = () => {
             <span className="text-accent">APEX</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're not just developers – we're your strategic technology partner committed to your
-            success.
+            We're not just developers – we're your strategic technology partner
+            committed to your success.
           </p>
         </div>
 
@@ -57,7 +57,9 @@ export const WhyChoose = () => {
                 <feature.icon className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
             </Card>
           ))}
         </div>
@@ -67,13 +69,23 @@ export const WhyChoose = () => {
           <h3 className="text-3xl font-bold mb-12 text-center">Our Process</h3>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Discovery", desc: "Understanding your vision" },
+              {
+                step: "01",
+                title: "Discovery",
+                desc: "Understanding your vision",
+              },
               { step: "02", title: "Design", desc: "Crafting the experience" },
-              { step: "03", title: "Development", desc: "Building with precision" },
+              {
+                step: "03",
+                title: "Development",
+                desc: "Building with precision",
+              },
               { step: "04", title: "Delivery", desc: "Launch and support" },
             ].map((phase, index) => (
               <div key={phase.step} className="text-center relative">
-                <div className="text-6xl font-bold text-accent/20 mb-4">{phase.step}</div>
+                <div className="text-6xl font-bold text-accent/20 mb-4">
+                  {phase.step}
+                </div>
                 <h4 className="text-xl font-bold mb-2">{phase.title}</h4>
                 <p className="text-sm text-muted-foreground">{phase.desc}</p>
                 {index < 3 && (
@@ -82,6 +94,17 @@ export const WhyChoose = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="mt-16 p-12 bg-gradient-to-r from-[#0A1A35] to-[#162947] dark:from-[#FFB32C] dark:to-[#E69500] rounded-3xl text-center text-white dark:text-[#0A1A35] relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10 dark:bg-white/10"></div>
+        <div className="relative z-10">
+          <div className="w-1 h-16 bg-white/30 dark:bg-[#0A1A35]/30 mx-auto mb-6"></div>
+          <p className="text-2xl md:text-3xl font-bold leading-relaxed max-w-3xl mx-auto">
+            "Excellence isn't a destination. It's a commitment we bring to every
+            line of code, every pixel, every project."
+          </p>
         </div>
       </div>
     </section>
