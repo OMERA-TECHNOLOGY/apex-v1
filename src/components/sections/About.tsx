@@ -366,7 +366,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-gradient-to-br from-background via-primary/10 to-background"
+      className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-gradient-to-br from-background via-primary/10 to-background "
     >
       {/* ANIMATED BACKGROUND THAT WILL BLOW MINDS */}
       <div className="absolute inset-0 overflow-hidden">
@@ -408,7 +408,7 @@ export const About = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Senior engineers who don't just write code—we architect systems that
+            Senior engineers who don't just write code we architect systems that
             power millions of users. From startups to Fortune 500, we deliver
             excellence that scales.
           </p>
@@ -421,7 +421,7 @@ export const About = () => {
           ))}
 
           {/* ADDITIONAL TEAM - PURE FIRE */}
-          <Card className="bg-gradient-to-br from-card to-card/80 border border-border rounded-2xl p-8 shadow-2xl group hover:scale-105 transition-all duration-500">
+          <Card className="bg-gradient-to-br from-card bg-purple-500 to-card/80 border border-border rounded-2xl p-8 shadow-2xl group hover:scale-105 transition-all duration-500">
             <div className="text-center mb-8">
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-accent to-accent/70 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-accent/25 transition-shadow">
                 <Rocket className="w-8 h-8 text-accent-foreground" />
@@ -437,13 +437,13 @@ export const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid-cols-2 grid items-center justify-center gap-3">
               {additionalTeam.map((member, index) => (
                 <div
                   key={index}
-                  className="text-center group/item hover:scale-105 transition-transform"
+                  className="items-center  group/item hover:scale-105 transition-transform"
                 >
-                  <div className="text-2xl mb-2 transform group-hover/item:rotate-12 transition-transform">
+                  <div className="text-2xl mb-2  transform group-hover/item:rotate-12 transition-transform">
                     {member.icon}
                   </div>
                   <p className="text-xs font-semibold text-foreground mb-1">
