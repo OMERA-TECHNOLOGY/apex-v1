@@ -155,22 +155,13 @@ export const WhyChoose = () => {
                   </p>
                 </div>
               </div>
-<<<<<<< HEAD
-              <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </Card>
-=======
             </Button>
->>>>>>> 25e10febb70cee05534ce081ced38b6ed1084a72
           ))}
         </div>
         {/*  <feature.icon className="w-8 h-8 text-accent" /> */}
         {/* Process Timeline */}
         <div className="mt-20 w-full py-10">
           <h3 className="text-3xl font-bold mb-12 text-center">Our Process</h3>
-<<<<<<< HEAD
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
@@ -197,60 +188,6 @@ export const WhyChoose = () => {
                 )}
               </div>
             ))}
-=======
-
-          <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4 ">
-            <Card
-              title="Planning & Strategy"
-              icon={<AceternityIcon order="Phase 1" />}
-              description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements"
-            >
-              <CanvasRevealEffect
-                animationSpeed={5.1}
-                containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-              />
-            </Card>
-            <Card
-              title="Development & Progress Update"
-              icon={<AceternityIcon order="Phase 2" />}
-              description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
-            >
-              <CanvasRevealEffect
-                animationSpeed={3}
-                containerClassName="bg-black"
-                colors={[
-                  [236, 72, 153],
-                  [232, 121, 249],
-                ]}
-                dotSize={2}
-              />
-              {/* Radial gradient for the cute fade */}
-              <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-            </Card>
-            <Card
-              title="Development & Launch"
-              icon={<AceternityIcon order="Phase 3" />}
-              description="This is Where the magic happens!
-          Based on the approved design, I'll translate everything into functional code, building your
-          website from the ground up"
-            >
-              <CanvasRevealEffect
-                animationSpeed={3}
-                containerClassName="bg-sky-600"
-                colors={[[125, 211, 252]]}
-              />
-            </Card>
-            <Card
-              title="Planning & Strategy"
-              icon={<AceternityIcon order="Phase 4" />}
-              description="We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements"
-            >
-              <CanvasRevealEffect
-                animationSpeed={5.1}
-                containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-              />
-            </Card>
->>>>>>> 25e10febb70cee05534ce081ced38b6ed1084a72
           </div>
         </div>
       </div>
