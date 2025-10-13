@@ -29,7 +29,10 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column */}
@@ -40,8 +43,8 @@ export const Contact = () => {
               <span className="text-accent">Something Amazing</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
-              Ready to transform your vision into reality? Share your project idea and let's
-              discuss how we can help you succeed.
+              Ready to transform your vision into reality? Share your project
+              idea and let's discuss how we can help you succeed.
             </p>
 
             {/* Contact Info */}
@@ -72,7 +75,9 @@ export const Contact = () => {
                   </p>
                   <div className="flex items-center gap-2 mt-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-sm text-green-500">Available now</span>
+                    <span className="text-sm text-green-500">
+                      Available now
+                    </span>
                   </div>
                 </div>
               </div>
@@ -80,14 +85,17 @@ export const Contact = () => {
 
             {/* Trust Indicators */}
             <div className="mt-12 glass-morph rounded-2xl p-6">
-              <p className="text-sm text-muted-foreground mb-4">Trusted by startups and enterprises</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                Trusted by startups and enterprises
+              </p>
               <div className="flex items-center gap-6 text-sm">
                 <div>
                   <span className="font-bold text-accent">4.9/5</span> Rating
                 </div>
                 <div className="w-px h-6 bg-border" />
                 <div>
-                  <span className="font-bold text-accent">100%</span> Satisfaction
+                  <span className="font-bold text-accent">100%</span>{" "}
+                  Satisfaction
                 </div>
                 <div className="w-px h-6 bg-border" />
                 <div>
@@ -98,10 +106,13 @@ export const Contact = () => {
           </div>
 
           {/* Right Column - Form */}
-          <Card className="glass-morph p-8 lg:p-12">
+          <Card className="glass-morph p-8 lg:p-12 ">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name" className="text-base font-semibold mb-2 block">
+                <Label
+                  htmlFor="name"
+                  className="text-base font-semibold mb-2 block"
+                >
                   Your Name
                 </Label>
                 <Input
@@ -116,7 +127,10 @@ export const Contact = () => {
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-base font-semibold mb-2 block">
+                <Label
+                  htmlFor="email"
+                  className="text-base font-semibold mb-2 block"
+                >
                   Email Address
                 </Label>
                 <Input
@@ -132,7 +146,10 @@ export const Contact = () => {
               </div>
 
               <div>
-                <Label htmlFor="project" className="text-base font-semibold mb-2 block">
+                <Label
+                  htmlFor="project"
+                  className="text-base font-semibold mb-2 block"
+                >
                   Project Idea
                 </Label>
                 <Textarea
@@ -148,7 +165,10 @@ export const Contact = () => {
               </div>
 
               <div>
-                <Label htmlFor="budget" className="text-base font-semibold mb-2 block">
+                <Label
+                  htmlFor="budget"
+                  className="text-base font-semibold mb-2 block"
+                >
                   Budget Range (Optional)
                 </Label>
                 <Input
@@ -171,7 +191,8 @@ export const Contact = () => {
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
-                We typically respond within 24 hours. Your information is kept confidential.
+                We typically respond within 24 hours. Your information is kept
+                confidential.
               </p>
             </form>
           </Card>
