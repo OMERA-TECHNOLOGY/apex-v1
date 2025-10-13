@@ -225,6 +225,17 @@ const AceternityIcon = ({ order }: { order: string }) => {
           </div>
         </div>
       </div>
+
+      <div className="mt-16 p-12 bg-gradient-to-r from-[#0A1A35] to-[#162947] dark:from-[#FFB32C] dark:to-[#E69500] rounded-3xl text-center text-white dark:text-[#0A1A35] relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10 dark:bg-white/10"></div>
+        <div className="relative z-10">
+          <div className="w-1 h-16 bg-white/30 dark:bg-[#0A1A35]/30 mx-auto mb-6"></div>
+          <p className="text-2xl md:text-3xl font-bold leading-relaxed max-w-3xl mx-auto">
+            "Excellence isn't a destination. It's a commitment we bring to every
+            line of code, every pixel, every project."
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

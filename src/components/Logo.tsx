@@ -10,7 +10,6 @@ const Logo = ({ className }: { className?: string }) => {
       y="0px"
       width="100%"
       viewBox="0 0 500 104"
-      enable-background="new 0 0 500 104"
       className={className}
     >
       <path

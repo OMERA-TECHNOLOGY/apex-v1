@@ -32,14 +32,23 @@ const projects: Project[] = [
     description:
       "Modern startup discovery platform featuring 5,000+ Y Combinator companies with advanced search, filtering, and analytics dashboard.",
     category: "B2B Platform",
-    technologies: ["React", "TypeScript", "GraphQL", "Elasticsearch", "Kubernetes"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "GraphQL",
+      "Elasticsearch",
+      "Kubernetes",
+    ],
     gradient: "from-orange-500 to-red-600",
   },
 ];
 
 export const CaseStudies = () => {
   return (
-    <section id="case-studies" className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+    <section
+      id="case-studies"
+      className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-20 text-center">
@@ -49,7 +58,8 @@ export const CaseStudies = () => {
             <span className="text-accent">Case Studies</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real-world projects that showcase our commitment to excellence and innovation.
+            Real-world projects that showcase our commitment to excellence and
+            innovation.
           </p>
         </div>
 
@@ -80,10 +90,14 @@ export const CaseStudies = () => {
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-6">{project.description}</p>
+                <p className="text-muted-foreground mb-6">
+                  {project.description}
+                </p>
 
                 <div>
-                  <p className="text-sm font-semibold mb-3 text-accent">Tech Stack</p>
+                  <p className="text-sm font-semibold mb-3 text-accent">
+                    Tech Stack
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge
