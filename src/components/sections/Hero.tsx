@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
-  Play,
   Sparkles,
   Code,
   Globe,
   Smartphone,
   Cloud,
+  Play,
+  Zap,
+  Shield,
+  Database,
 } from "lucide-react";
 import Logo from "../Logo";
 
@@ -22,11 +24,11 @@ export const Hero = () => {
   useEffect(() => {
     const wordInterval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2000);
+    }, 3000);
 
     const techInterval = setInterval(() => {
       setTechIndex((prev) => (prev + 1) % techStack.length);
-    }, 1500);
+    }, 2000);
 
     return () => {
       clearInterval(wordInterval);
@@ -40,60 +42,24 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
-      {/* Clean Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-
-        {/* Minimal Floating Icons */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-accent/20"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
-            animate={{
-              y: [0, -20, 0],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          >
-            {i % 4 === 0 && <Code size={18} />}
-            {i % 4 === 1 && <Globe size={18} />}
-            {i % 4 === 2 && <Smartphone size={18} />}
-            {i % 4 === 3 && <Cloud size={18} />}
-          </motion.div>
-        ))}
       </div>
 
       <div className="relative max-w-7xl mx-auto w-full px-6 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-screen">
-        {/* Left Column */}
+        {/* Left Content - Your existing content */}
         <div className="flex flex-col justify-center space-y-8 py-20">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-fit"
-          >
+          {/* Your existing left content remains the same */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-fit">
             <Sparkles className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-accent">
               Enterprise Tech Solutions
             </span>
-          </motion.div>
+          </div>
 
-          {/* Headline */}
           <div className="space-y-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-            >
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
               <span className="text-foreground">Tech</span>
               <br />
               <span className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">
@@ -102,82 +68,67 @@ export const Hero = () => {
               <br />
               <div className="flex items-center gap-4">
                 <span className="text-muted-foreground">That</span>
-                <motion.span
-                  key={wordIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent"
-                >
-                  {rotatingWords[wordIndex]}
-                </motion.span>
+                <div className="text-changer">
+                  <div className="roles-container">
+                    {rotatingWords.map((word, index) => (
+                      <span
+                        key={word}
+                        className={`role ${
+                          index === wordIndex ? "active" : ""
+                        }`}
+                      >
+                        {word}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </motion.h1>
+            </h1>
 
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-xl text-muted-foreground leading-relaxed"
-            >
+            <p className="text-xl text-muted-foreground leading-relaxed">
               We build custom software solutions and scalable digital platforms
               that drive real business results.
-            </motion.p>
+            </p>
 
-            {/* Tech Stack */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex items-center gap-3 text-lg text-muted-foreground"
-            >
+            <div className="flex items-center gap-3 text-lg text-muted-foreground">
               <span>Powered by</span>
-              <motion.span
-                key={techIndex}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="font-bold text-accent"
-              >
-                {techStack[techIndex]}
-              </motion.span>
-            </motion.div>
+              <div className="text-changer tech-changer">
+                <div className="roles-container">
+                  {techStack.map((tech, index) => (
+                    <span
+                      key={tech}
+                      className={`role tech-role ${
+                        index === techIndex ? "active" : ""
+                      }`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Services - Compact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap gap-4"
-          >
+          <div className="flex flex-wrap gap-4">
             {[
               { icon: Code, label: "Development" },
               { icon: Globe, label: "Web" },
               { icon: Smartphone, label: "Mobile" },
               { icon: Cloud, label: "Cloud" },
             ].map((service, index) => (
-              <motion.div
+              <div
                 key={service.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-accent/5 border border-accent/10"
               >
                 <service.icon className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-foreground">
                   {service.label}
                 </span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
               className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-6 rounded-xl"
@@ -186,90 +137,227 @@ export const Hero = () => {
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right Column */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-          className="relative"
-        >
-          {/* Main Card */}
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-lg">
-            <div className="bg-background rounded-lg overflow-hidden border border-border">
-              {/* Browser Header */}
-              <div className="bg-muted px-4 py-3 flex gap-2 items-center border-b border-border">
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-                <div className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-              </div>
+        {/* New World-Class Right Section */}
+        <div className="relative">
+          {/* Main Dashboard Card */}
+          <div className="relative bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-purple-500/5 rounded-3xl blur-xl -z-10" />
 
-              {/* Content */}
-              <div className="p-8 bg-gradient-to-br from-accent/5 to-accent/2 min-h-[400px] flex items-center justify-center">
-                <div className="text-center space-y-6">
-                  <div className="w-16 h-16 bg-accent rounded-2xl mx-auto flex items-center justify-center">
-                    <Logo className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-2xl font-bold text-accent">+245%</div>
-                    <div className="text-sm text-muted-foreground">
-                      Average Growth
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <div className="font-bold text-foreground">50+</div>
-                      <div className="text-xs text-muted-foreground">
-                        Projects
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold text-foreground">99%</div>
-                      <div className="text-xs text-muted-foreground">
-                        Success
-                      </div>
-                    </div>
-                  </div>
+            {/* Header with Tabs */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                <div className="w-3 h-3 rounded-full bg-green-400/80" />
+              </div>
+              <div className="flex gap-1 bg-muted/50 rounded-lg p-1">
+                {["Dashboard", "Analytics", "Settings"].map((tab) => (
+                  <button
+                    key={tab}
+                    className="px-3 py-1 text-xs rounded-md transition-all duration-200 hover:bg-background/50"
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {/* Performance Metric */}
+              <div className="bg-background/50 rounded-2xl p-4 border border-border/30">
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-4 h-4 text-green-400" />
+                  <span className="text-xs font-medium text-muted-foreground">
+                    Performance
+                  </span>
+                </div>
+                <div className="text-2xl font-bold text-foreground">99.9%</div>
+                <div className="w-full bg-muted rounded-full h-1 mt-2">
+                  <div className="bg-green-400 h-1 rounded-full w-11/12" />
                 </div>
               </div>
+
+              {/* Security Metric */}
+              <div className="bg-background/50 rounded-2xl p-4 border border-border/30">
+                <div className="flex items-center gap-2 mb-2">
+                  <Shield className="w-4 h-4 text-blue-400" />
+                  <span className="text-xs font-medium text-muted-foreground">
+                    Security
+                  </span>
+                </div>
+                <div className="text-2xl font-bold text-foreground">100%</div>
+                <div className="w-full bg-muted rounded-full h-1 mt-2">
+                  <div className="bg-blue-400 h-1 rounded-full w-full" />
+                </div>
+              </div>
+            </div>
+
+            {/* Real-time Activity */}
+            <div className="bg-background/50 rounded-2xl p-4 border border-border/30 mb-6">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-semibold text-foreground">
+                  Real-time Activity
+                </span>
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="text-xs text-muted-foreground">Live</span>
+                </div>
+              </div>
+
+              {/* Activity Bars */}
+              <div className="space-y-3">
+                {[
+                  { label: "API Requests", value: 75, color: "bg-accent" },
+                  { label: "Database", value: 60, color: "bg-blue-400" },
+                  { label: "Cache", value: 45, color: "bg-green-400" },
+                  { label: "Storage", value: 30, color: "bg-purple-400" },
+                ].map((item, index) => (
+                  <div key={item.label} className="flex items-center gap-3">
+                    <span className="text-xs text-muted-foreground w-20">
+                      {item.label}
+                    </span>
+                    <div className="flex-1 bg-muted rounded-full h-2">
+                      <div
+                        className={`${item.color} h-2 rounded-full transition-all duration-1000 ease-out`}
+                        style={{ width: `${item.value}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-medium text-foreground w-8">
+                      {item.value}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Code Preview */}
+            <div className="bg-background rounded-xl p-4 border border-border">
+              <div className="flex items-center gap-2 mb-3">
+                <Code className="w-4 h-4 text-accent" />
+                <span className="text-sm font-semibold text-foreground">
+                  deployment.yml
+                </span>
+              </div>
+              <div className="space-y-1 text-xs font-mono">
+                <div className="flex">
+                  <span className="text-purple-400 w-6">1</span>
+                  <span className="text-blue-400">deployment:</span>
+                </div>
+                <div className="flex">
+                  <span className="text-purple-400 w-6">2</span>
+                  <span className="text-green-400 ml-4">
+                    - name: production
+                  </span>
+                </div>
+                <div className="flex">
+                  <span className="text-purple-400 w-6">3</span>
+                  <span className="text-green-400 ml-4">status: active</span>
+                </div>
+                <div className="flex">
+                  <span className="text-purple-400 w-6">4</span>
+                  <span className="text-green-400 ml-4">version: 2.4.1</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute -top-3 -right-3 bg-gradient-to-r from-accent to-purple-500 text-primary text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+              LIVE
             </div>
           </div>
 
           {/* Floating Cards */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute -bottom-4 -left-4 bg-background border border-border rounded-xl p-3 shadow-lg w-28"
-          >
-            <Code className="w-5 h-5 text-accent mb-1" />
-            <div className="text-xs text-muted-foreground">Backend</div>
-            <div className="text-sm font-semibold">Node.js</div>
-          </motion.div>
+          <div className="absolute -bottom-6 -left-6 bg-background border border-border rounded-2xl p-4 shadow-xl w-32">
+            <Database className="w-5 h-5 text-accent mb-2" />
+            <div className="text-xs text-muted-foreground">Database</div>
+            <div className="text-sm font-semibold text-foreground">
+              PostgreSQL
+            </div>
+          </div>
 
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            className="absolute -top-4 -right-4 bg-background border border-border rounded-xl p-3 shadow-lg w-28"
-          >
-            <Globe className="w-5 h-5 text-accent mb-1" />
-            <div className="text-xs text-muted-foreground">Frontend</div>
-            <div className="text-sm font-semibold">React</div>
-          </motion.div>
-        </motion.div>
+          <div className="absolute -top-6 -right-6 bg-background border border-border rounded-2xl p-4 shadow-xl w-32">
+            <Cloud className="w-5 h-5 text-accent mb-2" />
+            <div className="text-xs text-muted-foreground">Cloud</div>
+            <div className="text-sm font-semibold text-foreground">AWS</div>
+          </div>
+
+          {/* Animated Background Elements */}
+          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80">
+            <div className="absolute inset-0 border-2 border-accent/20 rounded-full animate-ping-slow" />
+            <div className="absolute inset-4 border-2 border-accent/15 rounded-full animate-pulse" />
+          </div>
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-accent/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-accent rounded-full" />
-        </div>
-      </motion.div>
+      {/* CSS Styles */}
+      <style jsx>{`
+        @keyframes ping-slow {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+        .animate-ping-slow {
+          animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .text-changer {
+          height: 1.2em;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
+
+        .tech-changer {
+          height: 1.5em;
+          width: 120px;
+        }
+
+        .roles-container {
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
+
+        .role {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          font-weight: bold;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          display: flex;
+          align-items: center;
+          opacity: 0;
+          transform: translateY(20px);
+          color: hsl(var(--accent));
+        }
+
+        .role.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .text-changer:not(.tech-changer) .role {
+          font-size: inherit;
+          line-height: inherit;
+        }
+
+        .tech-changer .role {
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+        }
+      `}</style>
     </section>
   );
 };

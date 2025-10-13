@@ -256,3 +256,56 @@ All colors MUST be HSL.
 * {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.text-changer {
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tech-changer {
+  height: 1.5em;
+  width: 120px;
+}
+
+.roles-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.role,
+.tech-role {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  color: hsl(var(--accent));
+  background: none !important;
+  -webkit-text-fill-color: hsl(var(--accent)) !important;
+  background: none !important;
+}
+
+.role.active,
+.tech-role.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-changer:not(.tech-changer) .role {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.tech-changer .role {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
