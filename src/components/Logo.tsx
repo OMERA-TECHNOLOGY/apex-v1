@@ -103,7 +103,7 @@ M263.169373,31.580875
 z"
       />
       <path
-        fill="#F0F0F0"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="
@@ -126,7 +126,7 @@ M127.666672,0.999999
 z"
       />
       <path
-        fill="#ECEDEC"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="
@@ -154,7 +154,7 @@ M389.892273,73.892662
 z"
       />
       <path
-        fill="#EFEEED"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="
@@ -181,7 +181,7 @@ M227.441574,48.963390
 z"
       />
       <path
-        fill="#EDEDEC"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="
@@ -204,7 +204,7 @@ M356.760193,33.169144
 z"
       />
       <path
-        fill="#EDEDEC"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="
@@ -227,7 +227,7 @@ M295.533478,45.147144
 z"
       />
       <path
-        fill="#F0F0F0"
+        fill="currentColor"
         opacity="1.000000"
         stroke="none"
         d="

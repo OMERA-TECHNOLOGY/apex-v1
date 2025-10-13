@@ -38,7 +38,7 @@ const NavBar = () => {
           onClick={() => scrollToSection("hero")}
           className="text-2xl font-bold tracking-[0.3em] bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent hover:scale-105 transition-all duration-300 cursor-hover"
         >
-          <Logo className="h-10 w-auto fill-accent" />
+          <Logo className="h-10 w-auto text-foreground" />
         </button>
 
         <div className="hidden md:flex items-center gap-8">
