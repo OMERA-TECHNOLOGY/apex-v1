@@ -56,26 +56,6 @@ const services: Service[] = [
     ],
   },
   {
-    id: "frontend",
-    title: "Frontend Engineering",
-    description:
-      "Pixel-perfect, responsive interfaces that users love to interact with.",
-    icon: Palette,
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Three.js",
-    ],
-    features: [
-      "Responsive design",
-      "Micro-interactions",
-      "3D animations",
-      "Performance optimization",
-    ],
-  },
-  {
     id: "backend",
     title: "Backend Architecture",
     description:

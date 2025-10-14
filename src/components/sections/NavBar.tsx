@@ -42,7 +42,6 @@ const NavBar = () => {
         </button>
 
         <div className="hidden md:flex items-center gap-8">
-          {/* Navigation Links */}
           {["about", "services", "work", "contact"].map((section) => (
             <button
               key={section}
@@ -56,7 +55,13 @@ const NavBar = () => {
             </button>
           ))}
 
-          {/* Theme Toggle Dropdown */}
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="px-6 py-2 bg-gradient-to-r from-accent to-accent/80 text-primary rounded-full text-sm font-semibold hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 cursor-hover"
+          >
+            Start Project →
+          </button>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
@@ -97,14 +102,49 @@ const NavBar = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+        </div>
 
-          {/* Start Project Button */}
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-6 py-2 bg-gradient-to-r from-accent to-accent/80 text-primary rounded-full text-sm font-semibold hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 cursor-hover"
-          >
-            Start Project →
-          </button>
+        <div className="md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="p-2 rounded-full glass-morph border-accent/30 hover:border-accent cursor-hover"
+                aria-label="Toggle theme"
+              >
+                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="glass-morph border-accent/20"
+            >
+              <DropdownMenuItem
+                onClick={() => setTheme("light")}
+                className="cursor-hover"
+              >
+                <Sun className="mr-2 h-4 w-4" />
+                <span>Light</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("dark")}
+                className="cursor-hover"
+              >
+                <Moon className="mr-2 h-4 w-4" />
+                <span>Dark</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("system")}
+                className="cursor-hover"
+              >
+                <Sun className="mr-2 h-4 w-4" />
+                <span>System</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>

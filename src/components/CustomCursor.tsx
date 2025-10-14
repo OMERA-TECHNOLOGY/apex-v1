@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 export const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     const updateCursorPosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -22,14 +27,25 @@ export const CustomCursor = () => {
       }
     };
 
-    window.addEventListener("mousemove", updateCursorPosition);
-    window.addEventListener("mouseover", handleMouseOver);
+    checkMobile();
+
+    if (!isMobile) {
+      window.addEventListener("mousemove", updateCursorPosition);
+      window.addEventListener("mouseover", handleMouseOver);
+    }
+
+    window.addEventListener("resize", checkMobile);
 
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
       window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("resize", checkMobile);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <>
