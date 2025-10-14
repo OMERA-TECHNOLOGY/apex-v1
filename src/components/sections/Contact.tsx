@@ -38,7 +38,6 @@ export const Contact = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Column */}
           <div>
             <h2 className="text-5xl sm:text-6xl font-bold mb-6">
               Let's Build
@@ -50,7 +49,6 @@ export const Contact = () => {
               idea and let's discuss how we can help you succeed.
             </p>
 
-            {/* Contact Info */}
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
@@ -86,7 +84,6 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Trust Indicators */}
             <div className="mt-12 glass-morph rounded-2xl p-6">
               <p className="text-sm text-muted-foreground mb-4">
                 Trusted by startups and enterprises
@@ -108,7 +105,6 @@ export const Contact = () => {
             </div>
           </div>
 
-          {/* Right Column - Form */}
           <Card className="glass-morph p-8 lg:p-12 ">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -202,7 +198,6 @@ export const Contact = () => {
         </div>
       </div>
 
-      {/* Background Elements */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
     </section>

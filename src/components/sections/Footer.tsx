@@ -5,10 +5,8 @@ export const Footer = () => {
     <footer className="border-t border-border py-12 px-6 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
-              {/* Logo with gradient */}
               <div className="relative flex items-center justify-center">
                 <Logo className="h-10 sm:h-12 w-auto fill-[url(#footerLogoGradient)]" />
                 <svg className="absolute">
@@ -21,17 +19,13 @@ export const Footer = () => {
                       y2="0%"
                     >
                       <stop offset="0%" stopColor="#38bdf8" />{" "}
-                      {/* from-accent */}
                       <stop offset="50%" stopColor="#818cf8" />{" "}
-                      {/* via-accent */}
                       <stop offset="100%" stopColor="#c084fc" />{" "}
-                      {/* to-secondary */}
                     </linearGradient>
                   </defs>
                 </svg>
               </div>
 
-              {/* Brand text */}
               <span className="text-foreground text-2xl font-black tracking-tighter">
                 DIGITAL
               </span>
@@ -42,7 +36,6 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Links */}
           <nav className="flex gap-8 text-sm">
             <a
               href="#about"
@@ -71,7 +64,6 @@ export const Footer = () => {
           </nav>
         </div>
 
-        {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-border text-center text-sm text-muted-foreground">
           <p>
             © {new Date().getFullYear()} APEX Digital Solutions. All rights

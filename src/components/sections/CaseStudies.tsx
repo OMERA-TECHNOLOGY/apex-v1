@@ -123,18 +123,15 @@ export const CaseStudies = () => {
       id="case-studies"
       className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-gradient-to-b from-background to-background/80"
     >
-      {/* Advanced Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-500" />
 
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Enhanced Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +162,6 @@ export const CaseStudies = () => {
           </p>
         </motion.div>
 
-        {/* Enhanced Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -176,18 +172,14 @@ export const CaseStudies = () => {
           {projects.map((project, index) => (
             <motion.div key={project.title} variants={itemVariants}>
               <Card className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-3xl cursor-pointer hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 h-full flex flex-col">
-                {/* Gradient Header with Pattern */}
                 <div
                   className={`relative h-48 bg-gradient-to-br ${project.gradient} rounded-t-3xl overflow-hidden`}
                 >
-                  {/* Animated Background Pattern */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px] animate-pulse-slow" />
 
-                  {/* Overlay Effects */}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
-                  {/* Action Buttons */}
                   <div className="absolute top-4 right-4 flex gap-2">
                     <Button
                       size="sm"
@@ -197,14 +189,12 @@ export const CaseStudies = () => {
                     </Button>
                   </div>
 
-                  {/* Category Badge */}
                   <div className="absolute bottom-4 left-6">
                     <Badge className="bg-white/20 text-white border-0 backdrop-blur-md font-medium shadow-lg">
                       {project.category}
                     </Badge>
                   </div>
 
-                  {/* Live Stats */}
                   <div className="absolute bottom-4 right-6 flex gap-2">
                     <div className="flex items-center gap-1 text-white/90 text-sm backdrop-blur-md bg-black/30 px-3 py-1.5 rounded-full border border-white/10">
                       <Users className="w-3 h-3" />
@@ -218,8 +208,6 @@ export const CaseStudies = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Content Section */}
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors duration-300 line-clamp-2">
@@ -229,8 +217,6 @@ export const CaseStudies = () => {
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm font-light">
                       {project.description}
                     </p>
-
-                    {/* Key Results */}
                     <div className="mb-4 space-y-2">
                       {project.results.slice(0, 2).map((result, i) => (
                         <div
@@ -243,7 +229,6 @@ export const CaseStudies = () => {
                       ))}
                     </div>
 
-                    {/* Tech Stack */}
                     <div className="mb-4">
                       <p className="text-sm font-semibold mb-2 text-accent flex items-center gap-2">
                         <Code className="w-4 h-4" />
@@ -263,7 +248,6 @@ export const CaseStudies = () => {
                     </div>
                   </div>
 
-                  {/* Rating and CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-border/50">
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1">
@@ -295,10 +279,8 @@ export const CaseStudies = () => {
                   </div>
                 </div>
 
-                {/* Hover Border Effect */}
                 <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-accent/20 transition-all duration-500 pointer-events-none" />
 
-                {/* Growth Badge */}
                 <div className="absolute -top-3 -right-3">
                   <Badge className="bg-gradient-to-r from-accent to-accent/70 text-primary border-0 shadow-lg font-bold">
                     +{project.stats.growth}
@@ -309,7 +291,6 @@ export const CaseStudies = () => {
           ))}
         </motion.div>
 
-        {/* Premium Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +299,6 @@ export const CaseStudies = () => {
           className="relative mb-20"
         >
           <div className="relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-xl border border-border/50 rounded-3xl p-12 overflow-hidden">
-            {/* Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
 
             <div className="grid md:grid-cols-4 gap-8 text-center relative z-10">
@@ -372,7 +352,6 @@ export const CaseStudies = () => {
           </div>
         </motion.div>
 
-        {/* Enhanced CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -408,22 +387,6 @@ export const CaseStudies = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Custom Animation */}
-      <style jsx>{`
-        @keyframes pulse-slow {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.7;
-          }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-      `}</style>
     </section>
   );
 };

@@ -124,7 +124,6 @@ export const Services = () => {
   return (
     <section id="services" className="py-32 px-6 sm:px-8 lg:px-12 relative">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="mb-20 text-center">
           <h2 className="text-5xl sm:text-6xl font-bold mb-6">
             Full-Spectrum
@@ -137,7 +136,6 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Services Tabs */}
         <Tabs
           value={activeService}
           onValueChange={setActiveService}
@@ -155,12 +153,10 @@ export const Services = () => {
             ))}
           </TabsList>
 
-          {/* Service Content */}
           {services.map((service) => (
             <TabsContent key={service.id} value={service.id} className="mt-0">
               <Card className="glass-morph p-12">
                 <div className="grid lg:grid-cols-2 gap-12">
-                  {/* Left Column */}
                   <div>
                     <div className="w-20 h-20 rounded-2xl bg-accent/20 flex items-center justify-center mb-6">
                       <service.icon className="w-10 h-10 text-accent" />
@@ -187,7 +183,6 @@ export const Services = () => {
                     </div>
                   </div>
 
-                  {/* Right Column */}
                   <div className="space-y-8">
                     <div>
                       <h4 className="text-xl font-bold mb-4 text-accent">

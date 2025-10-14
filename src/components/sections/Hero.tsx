@@ -48,9 +48,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto w-full px-6 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-screen">
-        {/* Left Content - Your existing content */}
         <div className="flex flex-col justify-center space-y-8 py-20">
-          {/* Your existing left content remains the same */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-fit">
             <Sparkles className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-accent">
@@ -140,14 +138,10 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* New World-Class Right Section */}
         <div className="relative">
-          {/* Main Dashboard Card */}
           <div className="relative bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
-            {/* Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-purple-500/5 rounded-3xl blur-xl -z-10" />
 
-            {/* Header with Tabs */}
             <div className="flex items-center justify-between mb-8">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-400/80" />
@@ -166,9 +160,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Main Content Grid */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              {/* Performance Metric */}
               <div className="bg-background/50 rounded-2xl p-4 border border-border/30">
                 <div className="flex items-center gap-2 mb-2">
                   <Zap className="w-4 h-4 text-green-400" />
@@ -182,7 +174,6 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Security Metric */}
               <div className="bg-background/50 rounded-2xl p-4 border border-border/30">
                 <div className="flex items-center gap-2 mb-2">
                   <Shield className="w-4 h-4 text-blue-400" />
@@ -197,7 +188,6 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Real-time Activity */}
             <div className="bg-background/50 rounded-2xl p-4 border border-border/30 mb-6">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm font-semibold text-foreground">
@@ -209,7 +199,6 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Activity Bars */}
               <div className="space-y-3">
                 {[
                   { label: "API Requests", value: 75, color: "bg-accent" },
@@ -235,7 +224,6 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Code Preview */}
             <div className="bg-background rounded-xl p-4 border border-border">
               <div className="flex items-center gap-2 mb-3">
                 <Code className="w-4 h-4 text-accent" />
@@ -265,13 +253,11 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Floating Elements */}
             <div className="absolute -top-3 -right-3 bg-gradient-to-r from-accent to-purple-500 text-primary text-xs font-bold px-3 py-1 rounded-full shadow-lg">
               LIVE
             </div>
           </div>
 
-          {/* Floating Cards */}
           <div className="absolute -bottom-6 -left-6 bg-background border border-border rounded-2xl p-4 shadow-xl w-32">
             <Database className="w-5 h-5 text-accent mb-2" />
             <div className="text-xs text-muted-foreground">Database</div>
@@ -286,78 +272,12 @@ export const Hero = () => {
             <div className="text-sm font-semibold text-foreground">AWS</div>
           </div>
 
-          {/* Animated Background Elements */}
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80">
             <div className="absolute inset-0 border-2 border-accent/20 rounded-full animate-ping-slow" />
             <div className="absolute inset-4 border-2 border-accent/15 rounded-full animate-pulse" />
           </div>
         </div>
       </div>
-
-      {/* CSS Styles */}
-      <style jsx>{`
-        @keyframes ping-slow {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-        .animate-ping-slow {
-          animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
-        .text-changer {
-          height: 1.2em;
-          display: flex;
-          align-items: center;
-          position: relative;
-        }
-
-        .tech-changer {
-          height: 1.5em;
-          width: 120px;
-        }
-
-        .roles-container {
-          position: relative;
-          height: 100%;
-          width: 100%;
-        }
-
-        .role {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          font-weight: bold;
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          display: flex;
-          align-items: center;
-          opacity: 0;
-          transform: translateY(20px);
-          color: hsl(var(--accent));
-        }
-
-        .role.active {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .text-changer:not(.tech-changer) .role {
-          font-size: inherit;
-          line-height: inherit;
-        }
-
-        .tech-changer .role {
-          font-size: 1.125rem;
-          line-height: 1.75rem;
-        }
-      `}</style>
     </section>
   );
 };

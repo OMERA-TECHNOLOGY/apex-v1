@@ -309,3 +309,78 @@ All colors MUST be HSL.
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping-slow {
+  animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.text-changer {
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tech-changer {
+  height: 1.5em;
+  width: 120px;
+}
+
+.roles-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.role {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  color: hsl(var(--accent));
+}
+
+.role.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-changer:not(.tech-changer) .role {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.tech-changer .role {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}

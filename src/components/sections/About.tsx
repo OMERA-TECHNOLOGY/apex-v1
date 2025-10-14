@@ -51,7 +51,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           isFlipped ? "rotate-y-180" : ""
         }`}
       >
-        {/* Front Side - DYNAMIC BASED ON MEMBER TYPE */}
         <Card
           className={`absolute inset-0 bg-gradient-to-br from-card via-accent/5 to-card/80 border border-border rounded-xl p-8 flex flex-col items-center justify-center text-center backface-hidden shadow-lg ${
             isBackend
@@ -59,7 +58,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
               : "hover:shadow-purple-500/10"
           } transition-all duration-300 group`}
         >
-          {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
               className={`absolute top-4 right-4 w-8 h-8 border-2 rounded-full ${
@@ -73,7 +71,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             ></div>
           </div>
 
-          {/* Avatar Container */}
           <div className="relative mb-6">
             <div
               className={`w-20 h-20 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-all duration-300 ${
@@ -84,11 +81,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             >
               <div className="text-white">{member.icon}</div>
             </div>
-            {/* Active Indicator */}
             <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-card rounded-full animate-pulse"></div>
           </div>
 
-          {/* Name & Role */}
           <div className="mb-4">
             <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
               {member.name}
@@ -107,12 +102,10 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             </div>
           </div>
 
-          {/* Quick Tech Stack */}
           <div className="flex items-center gap-3 mb-6 opacity-80">
             {member.quickTech}
           </div>
 
-          {/* Status */}
           <div className="flex items-center gap-2 px-3 py-1 bg-muted/50 rounded-full border border-border">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span className="text-xs text-muted-foreground">
@@ -120,7 +113,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             </span>
           </div>
 
-          {/* Hover Indicator */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div
               className={`w-1 h-1 rounded-full animate-bounce ${
@@ -143,7 +135,6 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           </div>
         </Card>
 
-        {/* Back - TECH STACK HEAVEN */}
         <Card className="absolute inset-0 bg-gradient-to-br from-card to-card/80 border border-border rounded-2xl p-6 rotate-y-180 backface-hidden shadow-2xl overflow-hidden">
           <div
             className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
@@ -368,13 +359,11 @@ export const About = () => {
       id="about"
       className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-gradient-to-br from-background via-primary/10 to-background "
     >
-      {/* ANIMATED BACKGROUND THAT WILL BLOW MINDS */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 -left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-500" />
 
-        {/* FLOATING TECH ICONS */}
         <div className="absolute top-1/4 left-10 animate-float">
           <SiReact className="text-cyan-400/20 text-4xl" />
         </div>
@@ -387,7 +376,6 @@ export const About = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* HEADER THAT COMMANDS RESPECT */}
         <div className="mb-20 text-center">
           <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-muted/50 rounded-full border border-border">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
@@ -414,13 +402,11 @@ export const About = () => {
           </p>
         </div>
 
-        {/* TEAM GRID THAT LOOKS LIKE A MILLION BUCKS */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}
 
-          {/* ADDITIONAL TEAM - PURE FIRE */}
           <Card className="bg-gradient-to-br from-card bg-purple-500 to-card/80 border border-border rounded-2xl p-8 shadow-2xl group hover:scale-105 transition-all duration-500">
             <div className="text-center mb-8">
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-accent to-accent/70 flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-accent/25 transition-shadow">
@@ -465,7 +451,6 @@ export const About = () => {
           </Card>
         </div>
 
-        {/* STATS THAT DON'T FUCK AROUND */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
