@@ -7,6 +7,7 @@ import { CaseStudies } from "@/components/sections/CaseStudies";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
+import { ScrollToTopButton } from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <WhyChoose />
       <Contact />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
