@@ -60,7 +60,7 @@ export const Contact = () => {
                     href="mailto:hello@apexdevs.com"
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    hello@apexdevs.com
+                    hello@omera.tech
                   </a>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Alemayehu Tadele"
                   required
                   className="bg-background/50 border-accent/30 focus:border-accent h-12"
                 />
@@ -138,7 +138,7 @@ export const Contact = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@company.com"
+                  placeholder="alemayehe@omera.tech"
                   required
                   className="bg-background/50 border-accent/30 focus:border-accent h-12"
                 />
