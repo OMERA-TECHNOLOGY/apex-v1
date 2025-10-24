@@ -41,7 +41,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pb-6">
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -129,7 +129,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-6 rounded-xl"
+              className="w-fit bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-6 rounded-xl"
               onClick={() => scrollToSection("contact")}
             >
               Start Your Project
@@ -138,7 +138,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full max-w-md mx-auto sm:max-w-lg lg:max-w-none">
           <div className="relative bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-3xl p-8 shadow-2xl backdrop-blur-sm">
             <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-purple-500/5 rounded-3xl blur-xl -z-10" />
 
@@ -258,7 +258,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -left-6 bg-background border border-border rounded-2xl p-4 shadow-xl w-32">
+          <div className="absolute -bottom-6 -left-6 bg-background border border-border rounded-2xl p-4 shadow-xl w-32 z-50">
             <Database className="w-5 h-5 text-accent mb-2" />
             <div className="text-xs text-muted-foreground">Database</div>
             <div className="text-sm font-semibold text-foreground">
